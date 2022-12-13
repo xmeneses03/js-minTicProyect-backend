@@ -1,0 +1,31 @@
+const mongoose = require('mongoose');
+//se coloca el esquema que esta en la base de datos
+
+const proveedoresSchema = mongoose.Schema({
+    nombres:{
+        type: String,
+        required:true
+    }, 
+    apellidos:{
+        type: String,
+        required: true
+    },
+    documento:{
+        type: Number,
+        required: true
+    },
+    correo:{
+        type: String,
+        required: true
+    },
+    telefono:{
+        type: Number,
+        required: true
+    }, 
+    empresa:{
+        type: String,
+        required: true
+    }
+},{versionkey: false});
+
+module.exports = mongoose.model('Proveedores', proveedoresSchema)
