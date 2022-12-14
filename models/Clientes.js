@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 //se coloca el esquema que esta en la base de datos
 
 const clientesSchema = mongoose.Schema({
-    cedula:{
-        type: Number,
-        required:true
-    }, 
+   
     nombres:{
         type: String,
         required: true
@@ -14,6 +11,10 @@ const clientesSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    documento:{
+        type: Number,
+        required:true
+    }, 
     correo:{
         type: String,
         required: true

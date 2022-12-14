@@ -54,15 +54,16 @@ exports.eliminarCliente = async(req, res) => {
 exports.modificarCliente = async(req, res) => {
     try {
        
-        const {cedula, nombres, apellidos, correo, telefono, ciudad} = req.body;
+        const {nombres, apellidos, documento, correo, telefono, ciudad} = req.body;
         let cliente = await Clientes.findById(req.params.id);
         if(!cliente){
             res.status(404).json({msg: 'no existe el cliente'});
             return 
         }
-        cliente.cedula = cedula;
+        
         cliente.nombres = nombres;
         cliente.apellidos = apellidos;
+        cliente.documento = documento;
         cliente.correo = correo;
         cliente.telefono = telefono;
         cliente.ciudad = ciudad;
